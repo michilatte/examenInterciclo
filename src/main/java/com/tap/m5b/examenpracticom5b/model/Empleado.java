@@ -28,31 +28,31 @@ public class Empleado {
     private int id_empleado;
 
     @Column(name = "cedula")
-    private int cedula;
+    private String cedula;
 
-    @Size(min = 4, max = 45, message = "El apellido debe tener maximo 45 caracteres")
+    //@Size(min = 4, max = 45, message = "El apellido debe tener maximo 45 caracteres")
     @NotBlank(message = "Llene el campo apellido")
     @Column(name = "apellido")
     private String apellido;
 
-    @Size(min = 4, max = 45, message = "El nombre debe tener maximo 45 caracteres")
+    //@Size(min = 4, max = 45, message = "El nombre debe tener maximo 45 caracteres")
     @NotBlank(message = "Llene el campo nombre")
     @Column(name = "nombre")
     private String nombre;
 
-    @Size(min = 7, max = 15, message = "El telefono debe tener maximo 15 digitos")
+   // @Size(min = 7, max = 15, message = "El telefono debe tener maximo 15 digitos")
     @NotBlank(message = "Llene el campo telefono")
     @Column(name = "telefono")
     private String telefono;
 
-    @Size(min = 4, max = 45, message = "El apellido debe tener maximo 45 caracteres")
+    //@Size(min = 4, max = 45, message = "El apellido debe tener maximo 45 caracteres")
     @NotBlank(message = "Llene el campo direccion")
     @Column(name = "direccion")
     private String direccion;
 
     @NotBlank(message = "Llene el fecha de nacimiento")
     @Column(name = "fecha_nacimiento")
-    private Date fecha_nacimiento;
+    private String fecha_nacimiento;
 
     @Size(min = 4, max = 45, message = "El apellido debe tener maximo 45 caracteres")
     @NotBlank(message = "Llene el campo observacion")

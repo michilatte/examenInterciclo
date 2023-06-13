@@ -40,16 +40,19 @@ public class EmpleadoController {
     @Operation(summary = "Enviar los campos del EMPLEADO")
     @PostMapping("/crear")
     public ResponseEntity<Empleado> crearEmpleado(@RequestBody Empleado emp) {
-        
-        /*
         double sueldocalculado;
         if (emp.getDias_trabajo() >= 20 && emp.getDias_trabajo() < 30) {
-            sueldocalculado = emp.getSueldo() + (emp.getSueldo() * 0.2);
+            sueldocalculado = emp.getSueldo() + (emp.getDias_trabajo() * 15); 
+            sueldocalculado += sueldocalculado * 0.02; // Bono del 2%
             emp.setSueldo(sueldocalculado);
         } else if (emp.getDias_trabajo() >= 30) {
-            sueldocalculado = emp.getSueldo() + (emp.getSueldo() * 0.5);
+            sueldocalculado = emp.getSueldo() + (emp.getDias_trabajo() * 15); 
+            sueldocalculado += sueldocalculado * 0.05; // Bono del 5%
             emp.setSueldo(sueldocalculado);
-        }*/
+        } else {
+            sueldocalculado = emp.getSueldo() + (emp.getDias_trabajo() * 15); 
+            emp.setSueldo(sueldocalculado);
+        }
 
         return new ResponseEntity<>(empleadoService.save(emp), HttpStatus.CREATED);
     }
